@@ -135,6 +135,8 @@ const printExchangeRates = async (): Promise<void> => {
     getBinancePriceData([
       ['ADABTC', 'ADA-BTC'],
       ['DOTBTC', 'DOT-BTC'],
+      ['BNBBTC', 'BNB-BTC'],
+      ['LITBTC', 'LIT-BTC'],
     ]),
   ])
 
