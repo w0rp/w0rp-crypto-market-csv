@@ -136,7 +136,10 @@ const printExchangeRates = async (): Promise<void> => {
       ['ADABTC', 'ADA-BTC'],
       ['DOTBTC', 'DOT-BTC'],
       ['BNBBTC', 'BNB-BTC'],
+      ['ETHGBP', 'ETH-GBP'],
       ['LITBTC', 'LIT-BTC'],
+      ['XMRBTC', 'XMR-BTC'],
+      ['HBARBTC', 'HBAR-BTC'],
     ]),
   ])
 
