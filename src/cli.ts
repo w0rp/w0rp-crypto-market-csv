@@ -126,13 +126,11 @@ const getBinancePriceData = async (productIds: [string, string][]): Promise<Bina
  * Get exchange rates from cryptocurrency exchanges and print them as CSV.
  */
 const printExchangeRates = async (): Promise<void> => {
-  const [coinbaseResults, binanceResults] = await Promise.all([
-    getCoinbasePriceData([
-      'XTZ-GBP',
-      'LINK-GBP',
-      'BTC-GBP',
-    ]),
+  const [binanceResults] = await Promise.all([
     getBinancePriceData([
+      ['XTZBTC', 'XTZ-BTC'],
+      ['LINKGBP', 'LINK-GBP'],
+      ['BTCGBP', 'BTC-GBP'],
       ['ADABTC', 'ADA-BTC'],
       ['DOTBTC', 'DOT-BTC'],
       ['BNBBTC', 'BNB-BTC'],
@@ -140,14 +138,13 @@ const printExchangeRates = async (): Promise<void> => {
       ['LITBTC', 'LIT-BTC'],
       ['XMRBTC', 'XMR-BTC'],
       ['HBARBTC', 'HBAR-BTC'],
+      ['GBPUSDT', 'GBP-USDT'],
     ]),
   ])
 
   const lines: string[] = [
     ...binanceResults
       .map(({symbol, price}) => `Binance,${symbol},${price}\n`),
-    ...coinbaseResults
-      .map(({product_id, price}) => `Coinbase,${product_id},${price}\n`),
   ]
   lines.sort()
 
