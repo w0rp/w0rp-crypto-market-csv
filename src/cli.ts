@@ -140,6 +140,7 @@ const printExchangeRates = async (): Promise<void> => {
       ['HBARBTC', 'HBAR-BTC'],
       ['GBPUSDT', 'GBP-USDT'],
       ['UNIUSDT', 'UNI-USDT'],
+      ['VETGBP', 'VET-GBP'],
     ]),
   ])
 
